@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Add Card - Sports Card Inventory{% endblock %}
+
+{% block content %}
+<h1>Add a New Card</h1>
+<div class="table-container">
+<table>
+
+<form method="POST">
+    <label>Card Name:</label><br>
+    <input type="text" name="card_name" required><br>
+    <label>Player:</label><br>
+    <input type="text" name="player"><br>
+    <label>Year:</label><br>
+    <input type="number" name="year"><br>
+    <label>Condition:</label><br>
+    <input type="text" name="condition"><br>
+    <label>Quantity:</label><br>
+    <input type="number" name="quantity" value="1"><br>
+    <label>Purchase Price:</label><br>
+    <input type="number" name="purchase_price" step="0.01"><br>
+    <label>Purchase Date:</label><br>
+    <input type="date" name="purchase_date"><br>
+    <label>Set Name:</label><br>
+    <input type="text" name="set_name"><br>
+    <label>Card Number:</label><br>
+    <input type="text" name="card_number"><br>
+    <label>Grading:</label><br>
+    <input type="text" name="grading"><br>
+    <label>Sale Price:</label><br>
+    <input type="number" name="sale_price" step="0.01"><br>
+    <label>Sale Date:</label><br>
+    <input type="date" name="sale_date"><br>
+    <label>Vendor/Buyer Info:</label><br>
+    <input type="text" name="vendor_or_buyer"><br><br>
+    <button type="submit">Add Card</button>
+</form>
+</table>
+</div>
+{% endblock %}

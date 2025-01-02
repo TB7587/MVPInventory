@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Card - Sports Card Inventory{% endblock %}
+
+{% block content %}
+<h1>Edit Card</h1>
+<form method="POST">
+    <label>Card Name:</label><br>
+    <input type="text" name="card_name" value="{{ card[1] }}" required><br>
+    <label>Player:</label><br>
+    <input type="text" name="player" value="{{ card[2] }}"><br>
+    <label>Year:</label><br>
+    <input type="number" name="year" value="{{ card[3] }}"><br>
+    <label>Condition:</label><br>
+    <input type="text" name="condition" value="{{ card[4] }}"><br>
+    <label>Quantity:</label><br>
+    <input type="number" name="quantity" value="{{ card[5] }}"><br>
+    <label>Purchase Price:</label><br>
+    <input type="number" name="purchase_price" step="0.01" value="{{ card[6] }}"><br>
+    <label>Purchase Date:</label><br>
+    <input type="date" name="purchase_date" value="{{ card[7] }}"><br>
+    <label>Set Name:</label><br>
+    <input type="text" name="set_name" value="{{ card[8] }}"><br>
+    <label>Card Number:</label><br>
+    <input type="text" name="card_number" value="{{ card[9] }}"><br>
+    <label>Grading:</label><br>
+    <input type="text" name="grading" value="{{ card[10] }}"><br>
+    <label>Sale Price:</label><br>
+    <input type="number" name="sale_price" step="0.01" value="{{ card[11] }}"><br>
+    <label>Sale Date:</label><br>
+    <input type="date" name="sale_date" value="{{ card[12] }}"><br>
+    <label>Vendor/Buyer Info:</label><br>
+    <input type="text" name="vendor_or_buyer" value="{{ card[13] }}"><br><br>
+    <button type="submit">Save Changes</button>
+</form>
+{% endblock %}

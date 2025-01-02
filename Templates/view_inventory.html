@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}View Inventory - Sports Card Inventory{% endblock %}
+
+{% block content %}
+<h1>Inventory</h1>
+<form method="POST" style="margin-bottom: 20px; text-align: center;">
+    <input type="text" name="search" placeholder="Search by card name or player" style="padding: 10px; width: 30%;">
+    <input type="text" name="player" placeholder="Filter by player" style="padding: 10px; width: 20%;">
+    <input type="number" name="year" placeholder="Filter by year" style="padding: 10px; width: 10%;">
+    <button type="submit" style="padding: 10px 20px;">Apply Filters</button>
+</form>
+
+{% if no_results %}
+    <p style="text-align: center; color: red; font-weight: bold;">No records match your criteria.</p>
+{% else %}
+<div class="table-container">
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Card Name</th>
+            <th>Player</th>
+            <th>Year</th>
+            <th>Condition</th>
+            <th>Quantity</th>
+            <th>Purchase Price</th>
+            <th>Purchase Date</th>
+            <th>Set Name</th>
+            <th>Card Number</th>
+            <th>Grading</th>
+            <th>Sale Price</th>
+            <th>Sale Date</th>
+            <th>Vendor/Buyer</th>
+            <th>Actions</th>
+        </tr>
+        {% for row in rows %}
+        <tr>
+            {% for column in row %}
+            <td>{{ column }}</td>
+            {% endfor %}
+            <td>
+                <a href="/edit/{{ row[0] }}">Edit</a>
+                <a href="/delete/{{ row[0] }}" onclick="return confirm('Are you sure you want to delete this card?')">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endif %}
+{% endblock %}
+
+

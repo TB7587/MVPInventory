@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Sports Card Inventory{% endblock %}
+
+{% block content %}
+<h1>Welcome to Your Sports Card Inventory System</h1>
+<div style="display: flex; justify-content: space-around; margin: 20px 0; text-align: center;">
+    <div>
+        <h2>Total Cards</h2>
+        <p>{{ total_cards }}</p>
+    </div>
+    <div>
+        <h2>Total Purchase Value</h2>
+        <p>${{ "%.2f" | format(total_value) }}</p>
+    </div>
+    <div>
+        <h2>Total Sales Value</h2>
+        <p>${{ "%.2f" | format(total_sales) }}</p>
+    </div>
+</div>
+<p>Manage your collection with ease.</p>
+{% endblock %}
+
